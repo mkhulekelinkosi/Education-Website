@@ -40,7 +40,7 @@ LearnigGuide allows students to:
 
 ## Sections
 
-1. **Let's know your strengths** - Introduction and call-to-action
+1. **Hero** - Introduction and call-to-action
 2. **About** - Why LearnigGuide matters
 3. **Assessment** - Interactive learning style quiz
 4. **Subjects** - Mathematics, Physical Sciences, English

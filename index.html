@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A beginner-friendly website explaining how to get started with GitHub Copilot and build with AI-powered coding assistance."
+      content="LearnigGuide: Discover your learning style and master Mathematics, Physical Sciences, and English with personalized study strategies."
     />
-    <title>Copilot Starter Guide</title>
+    <title>LearnigGuide - Your Personalized Learning Journey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,15 +19,15 @@
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a href="#top" class="brand" aria-label="Copilot Starter Home">
-          <span class="brand-mark">C</span>
-          <span>Copilot Starter</span>
+        <a href="#top" class="brand" aria-label="LearnigGuide Home">
+          <span class="brand-mark">LG</span>
+          <span>LearnigGuide</span>
         </a>
 
         <nav class="nav-links" aria-label="Main navigation">
-          <a href="#features">Features</a>
-          <a href="#steps">Steps</a>
-          <a href="#faq">FAQ</a>
+          <a href="#about">About</a>
+          <a href="#quiz">Assessment</a>
+          <a href="#subjects">Subjects</a>
           <a href="#cta">Get Started</a>
         </nav>
 
@@ -39,153 +39,253 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Build faster with AI</p>
-            <h1>Get started with GitHub Copilot and ship smarter ideas.</h1>
+            <p class="eyebrow">Master Your Learning Style</p>
+            <h1>Let's get to know your strengths.</h1>
             <p class="lead">
-              Learn the basics, understand where Copilot helps most, and start creating a website,
-              prototype, or app with confidence.
+              LearnigGuide helps you understand your unique learning style, then provides personalized video guides and practice questions for Mathematics, Physical Sciences, and English.
             </p>
 
             <div class="cta-row">
-              <a class="button primary" href="#steps">Start Now</a>
-              <a class="button secondary" href="#features">Learn More</a>
+              <a class="button primary" href="#quiz">Start Assessment</a>
+              <a class="button secondary" href="#about">Learn More</a>
             </div>
 
             <ul class="trust-list" aria-label="Key benefits">
-              <li>Code suggestions</li>
-              <li>Faster prototyping</li>
-              <li>Learning support</li>
+              <li>Personalized learning paths</li>
+              <li>Expert video guides</li>
+              <li>Practice questions</li>
             </ul>
           </div>
 
           <div class="hero-card">
-            <div class="mini-window">
-              <div class="window-bar">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="code-sample">
-                <pre><code>const welcome = "Hello, Copilot!";
-
-function buildWebsite() {
-  return "A polished landing page";
-}
-
-console.log(welcome);</code></pre>
-              </div>
+            <div class="learning-visual">
+              <div class="learning-circle visual-1">Visual</div>
+              <div class="learning-circle visual-2">Auditory</div>
+              <div class="learning-circle visual-3">Kinesthetic</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="features" class="section">
+      <section id="about" class="section">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Why use Copilot</p>
-            <h2>Everything you need to accelerate your workflow</h2>
+            <p class="eyebrow">Why LearnigGuide</p>
+            <h2>Everyone learns differently. We help you find your way.</h2>
           </div>
 
           <div class="feature-grid">
             <article class="feature-card">
-              <div class="icon">⚡</div>
-              <h3>Speed up development</h3>
-              <p>Generate boilerplate, suggest code patterns, and reduce repetitive tasks.</p>
+              <div class="icon">🎯</div>
+              <h3>Personalized Assessment</h3>
+              <p>Take a quick quiz to identify your learning style: Visual, Auditory, or Kinesthetic.</p>
             </article>
 
             <article class="feature-card">
-              <div class="icon">🧠</div>
-              <h3>Learn while building</h3>
-              <p>Use suggestions to better understand APIs, structure, and project patterns.</p>
+              <div class="icon">📹</div>
+              <h3>Expert Video Guides</h3>
+              <p>Watch curated videos tailored to your learning style for each subject.</p>
             </article>
 
             <article class="feature-card">
-              <div class="icon">🎨</div>
-              <h3>Design and prototype faster</h3>
-              <p>Turn ideas into UI sections, forms, layouts, and functional components quickly.</p>
+              <div class="icon">✏️</div>
+              <h3>Practice Questions</h3>
+              <p>Test your knowledge with subject-specific practice questions designed for your level.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="steps" class="section alt-bg">
+      <section id="quiz" class="section alt-bg">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Getting started</p>
-            <h2>Simple steps to begin with Copilot</h2>
+            <p class="eyebrow">Learning Style Assessment</p>
+            <h2>Find Your Learning Style</h2>
+            <p class="intro-text">Answer 5 quick questions to discover how you learn best.</p>
           </div>
 
-          <div class="steps">
-            <div class="step-item">
-              <span class="step-number">01</span>
-              <div>
-                <h3>Install and sign in</h3>
-                <p>Use GitHub Copilot in VS Code, Visual Studio, or the editor of your choice.</p>
+          <div class="quiz-container">
+            <form id="learningQuiz" class="quiz-form">
+              <div class="quiz-question">
+                <label class="question-text">1. When learning something new, I prefer to:</label>
+                <div class="options">
+                  <label class="option">
+                    <input type="radio" name="q1" value="visual" />
+                    <span>See diagrams, charts, or videos</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q1" value="auditory" />
+                    <span>Listen to lectures or discussions</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q1" value="kinesthetic" />
+                    <span>Do hands-on activities or experiments</span>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <div class="step-item">
-              <span class="step-number">02</span>
-              <div>
-                <h3>Create a project</h3>
-                <p>Start with a simple HTML/CSS/JS site or a modern framework such as React.</p>
+              <div class="quiz-question">
+                <label class="question-text">2. I remember information best when I:</label>
+                <div class="options">
+                  <label class="option">
+                    <input type="radio" name="q2" value="visual" />
+                    <span>Write it down or visualize it</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q2" value="auditory" />
+                    <span>Say it out loud or hear it repeated</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q2" value="kinesthetic" />
+                    <span>Practice it or move around</span>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <div class="step-item">
-              <span class="step-number">03</span>
-              <div>
-                <h3>Prompt clearly</h3>
-                <p>Ask for components, functions, styling, or bug fixes with specific instructions.</p>
+              <div class="quiz-question">
+                <label class="question-text">3. In class, I pay most attention to:</label>
+                <div class="options">
+                  <label class="option">
+                    <input type="radio" name="q3" value="visual" />
+                    <span>The teacher's presentation slides</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q3" value="auditory" />
+                    <span>What the teacher says</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q3" value="kinesthetic" />
+                    <span>Lab work or interactive activities</span>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <div class="step-item">
-              <span class="step-number">04</span>
-              <div>
-                <h3>Review and adapt</h3>
-                <p>Always read the generated code, test it, and refine the result for correctness.</p>
+              <div class="quiz-question">
+                <label class="question-text">4. When solving a problem, I:</label>
+                <div class="options">
+                  <label class="option">
+                    <input type="radio" name="q4" value="visual" />
+                    <span>Draw it out or use a mental picture</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q4" value="auditory" />
+                    <span>Talk through it step by step</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q4" value="kinesthetic" />
+                    <span>Try different approaches physically</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="quiz-question">
+                <label class="question-text">5. I enjoy studying when:</label>
+                <div class="options">
+                  <label class="option">
+                    <input type="radio" name="q5" value="visual" />
+                    <span>Using colorful notes or mind maps</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q5" value="auditory" />
+                    <span>Studying with a group or using videos</span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="q5" value="kinesthetic" />
+                    <span>Working on real problems or projects</span>
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="button primary quiz-submit">Get My Results</button>
+            </form>
+
+            <div id="quizResult" class="quiz-result hidden">
+              <div class="result-box">
+                <p class="result-label">Your Learning Style:</p>
+                <h3 id="resultStyle" class="result-style"></h3>
+                <p id="resultDescription" class="result-description"></p>
+                <a href="#subjects" class="button primary">Explore Your Path</a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section id="subjects" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Core Subjects</p>
+            <h2>Master These Subjects with Personalized Guidance</h2>
+          </div>
+
+          <div class="subjects-grid">
+            <article class="subject-card">
+              <div class="subject-icon">🔢</div>
+              <h3>Mathematics</h3>
+              <p>From algebra to calculus, master mathematical concepts with your learning style.</p>
+              <ul class="topics-list">
+                <li>Algebra & Equations</li>
+                <li>Geometry & Proofs</li>
+                <li>Calculus Basics</li>
+              </ul>
+              <a href="#" class="button secondary small">Learn Math</a>
+            </article>
+
+            <article class="subject-card">
+              <div class="subject-icon">⚗️</div>
+              <h3>Physical Sciences</h3>
+              <p>Understand physics and chemistry through your preferred learning method.</p>
+              <ul class="topics-list">
+                <li>Forces & Motion</li>
+                <li>Energy & Thermodynamics</li>
+                <li>Chemical Reactions</li>
+              </ul>
+              <a href="#" class="button secondary small">Learn Sciences</a>
+            </article>
+
+            <article class="subject-card">
+              <div class="subject-icon">📚</div>
+              <h3>English</h3>
+              <p>Improve writing, reading, and communication skills with tailored strategies.</p>
+              <ul class="topics-list">
+                <li>Grammar & Writing</li>
+                <li>Literature Analysis</li>
+                <li>Communication Skills</li>
+              </ul>
+              <a href="#" class="button secondary small">Learn English</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt-bg">
         <div class="container split">
           <div>
-            <p class="eyebrow">Good prompts</p>
-            <h2>Ask for what you want, not just “fix this.”</h2>
+            <p class="eyebrow">How It Works</p>
+            <h2>Your Learning Journey</h2>
           </div>
 
-          <div class="prompt-box">
-            <p>“Create a responsive landing page for a learning website with a dark theme, hero section, feature cards, FAQ, and call-to-action buttons.”</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" class="section alt-bg">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">FAQ</p>
-            <h2>Common questions new users ask</h2>
-          </div>
-
-          <div class="faq-list">
-            <details open>
-              <summary>Do I need to be an expert coder?</summary>
-              <p>No. Copilot helps beginners by suggesting code, explaining patterns, and speeding up learning.</p>
-            </details>
-
-            <details>
-              <summary>Can Copilot write a website from scratch?</summary>
-              <p>Yes. You can prompt it to generate HTML, CSS, JavaScript, React components, and full site structure.</p>
-            </details>
-
-            <details>
-              <summary>Should I trust everything it generates?</summary>
-              <p>Review and test suggestions carefully. Copilot is useful, but it still needs human validation.</p>
-            </details>
+          <div class="steps-vertical">
+            <div class="step-vertical">
+              <span class="step-num">1</span>
+              <h4>Take Assessment</h4>
+              <p>Complete our learning style quiz in 2 minutes.</p>
+            </div>
+            <div class="step-vertical">
+              <span class="step-num">2</span>
+              <h4>Get Recommendations</h4>
+              <p>Receive personalized video guides for your style.</p>
+            </div>
+            <div class="step-vertical">
+              <span class="step-num">3</span>
+              <h4>Practice & Master</h4>
+              <p>Answer practice questions and track your progress.</p>
+            </div>
+            <div class="step-vertical">
+              <span class="step-num">4</span>
+              <h4>Achieve Success</h4>
+              <p>Apply your knowledge and excel in your studies.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -193,18 +293,18 @@ console.log(welcome);</code></pre>
       <section id="cta" class="section cta-section">
         <div class="container cta-box">
           <div>
-            <p class="eyebrow">Ready to build?</p>
-            <h2>Start your project today.</h2>
+            <p class="eyebrow">Ready to transform your learning?</p>
+            <h2>Start Your Personalized Learning Journey Today</h2>
           </div>
-          <a href="#top" class="button primary">Launch a site</a>
+          <a href="#quiz" class="button primary">Take Assessment Now</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-row">
-        <p>© <span id="year"></span> Copilot Starter</p>
-        <p>Built for learning and creation.</p>
+        <p>© <span id="year"></span> LearnigGuide</p>
+        <p>Personalized learning for every student.</p>
       </div>
     </footer>
 
