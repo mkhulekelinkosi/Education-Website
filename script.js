@@ -9,7 +9,7 @@ let currentSubject = '';
 let conversationHistory = [];
 
 // Replace with your Google Gemini API Key
-const GEMINI_API_KEY = 'YOUR_GOOGLE_GEMINI_API_KEY';
+const GEMINI_API_KEY = GOOGLE_API_KEY;
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
 if (year) {
