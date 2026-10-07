@@ -228,7 +228,7 @@
                 <li>Geometry & Proofs</li>
                 <li>Calculus Basics</li>
               </ul>
-              <a href="#" class="button secondary small">Learn Math</a>
+              <button class="button secondary small" data-subject="Mathematics">Learn Math</button>
             </article>
 
             <article class="subject-card">
@@ -240,7 +240,7 @@
                 <li>Energy & Thermodynamics</li>
                 <li>Chemical Reactions</li>
               </ul>
-              <a href="#" class="button secondary small">Learn Sciences</a>
+              <button class="button secondary small" data-subject="Physical Sciences">Learn Sciences</button>
             </article>
 
             <article class="subject-card">
@@ -252,7 +252,7 @@
                 <li>Literature Analysis</li>
                 <li>Communication Skills</li>
               </ul>
-              <a href="#" class="button secondary small">Learn English</a>
+              <button class="button secondary small" data-subject="English">Learn English</button>
             </article>
           </div>
         </div>
@@ -300,6 +300,39 @@
         </div>
       </section>
     </main>
+
+    <!-- AI Chatbot Modal -->
+    <div id="aiModal" class="modal hidden">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-header">
+          <h2 id="modalTitle">Learn Mathematics</h2>
+          <p>AI-Powered Personalized Recommendations</p>
+        </div>
+
+        <div class="modal-body">
+          <!-- Chat Section -->
+          <div class="chat-section">
+            <div id="chatBox" class="chat-box"></div>
+            <div class="chat-input-wrapper">
+              <input
+                type="text"
+                id="chatInput"
+                class="chat-input"
+                placeholder="Ask me anything about your learning..."
+              />
+              <button id="chatSend" class="button primary small">Send</button>
+            </div>
+          </div>
+
+          <!-- Recommendations Section -->
+          <div class="recommendations-section hidden" id="recommendationsSection">
+            <h3>📌 Your Personalized Recommendations</h3>
+            <div id="recommendationsBox" class="recommendations-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-row">
