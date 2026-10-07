@@ -134,7 +134,6 @@ async function sendMessage() {
   chatBox.scrollTop = chatBox.scrollHeight;
 
   try {
-    // Prepare conversation context
     conversationHistory.push({
       role: 'user',
       parts: [{ text: message }],
@@ -149,7 +148,7 @@ Based on their learning style:
 
 Provide personalized recommendations that match their learning style. Be encouraging and clear. After providing helpful information, suggest practical tips and resources.`;
 
-    const response = await fetch(GEMINI_API_URL, {
+    const response = await fetch(`${GEMINI_API_URL}?key=${encodeURIComponent(GEMINI_API_KEY)}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -172,33 +171,27 @@ Provide personalized recommendations that match their learning style. Be encoura
             threshold: 'BLOCK_MEDIUM_AND_ABOVE',
           },
         ],
-      }),
-      params: {
-        key: GEMINI_API_KEY,
-      },
+      })
     });
 
     if (!response.ok) {
-      throw new Error(`API Error: ${response.statusText}`);
+      const errorText = await response.text();
+      throw new Error(`API Error (${response.status}): ${errorText}`);
     }
 
     const data = await response.json();
-    const aiMessage = data.contents
-      ? data.contents[0].parts[0].text
-      : data.candidates[0].content.parts[0].text;
+    const aiMessage = data?.candidates?.[0]?.content?.parts
+      ?.map((part) => part.text)
+      .join('') || 'I could not generate a response.';
 
     conversationHistory.push({
       role: 'model',
       parts: [{ text: aiMessage }],
     });
 
-    // Remove loading
     loadingDiv.remove();
-
-    // Add AI response
     addMessage(aiMessage, 'ai');
 
-    // Show recommendations section if not visible
     if (conversationHistory.length >= 4) {
       showRecommendations();
     }
