@@ -11,7 +11,7 @@ let conversationHistory = [];
 // Set this in your page before the script loads, for example:
 // window.GEMINI_API_KEY = 'PASTE_YOUR_GEMINI_API_KEY_HERE';
 const GEMINI_API_KEY = window.GEMINI_API_KEY || 'PASTE_YOUR_GEMINI_API_KEY_HERE';
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 if (year) {
   year.textContent = new Date().getFullYear();
