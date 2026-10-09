@@ -8,8 +8,9 @@ let currentLearningStyle = 'visual'; // Default
 let currentSubject = '';
 let conversationHistory = [];
 
-// Replace with your Google Gemini API Key
-const GEMINI_API_KEY = "AQ.Ab8RN6JFNZgIxs-6cb7p7CxpbwVPTzYh6Jj02hHJ_mCgAnqwmg";
+// Set this in your page before the script loads, for example:
+// window.GEMINI_API_KEY = 'PASTE_YOUR_GEMINI_API_KEY_HERE';
+const GEMINI_API_KEY = window.GEMINI_API_KEY || 'PASTE_YOUR_GEMINI_API_KEY_HERE';
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
 if (year) {
@@ -52,7 +53,7 @@ if (learningQuiz) {
 
     const styleDescriptions = {
       visual: "You're a Visual Learner! You learn best through seeing diagrams, charts, videos, and visual representations. Focus on color-coded notes, infographics, and visual problem-solving techniques.",
-      auditory: "You're an Auditory Learner! You learn best through listening and discussions. Benefit from lectures, group discussions, audiobooks, and verbal explanations. Try reading notes out loud!",
+      auditory: "You're an Auditory Learner! You learn best through listening and discussions. Benefit from lectures, group discussions, audiobooks, and verbal explanations. Try reading notes out loud and explaining ideas to others.",
       kinesthetic: "You're a Kinesthetic Learner! You learn best through hands-on activities and movement. Engage with experiments, simulations, practice problems, and interactive learning experiences.",
     };
 
@@ -92,7 +93,7 @@ function openAIModal(subject) {
   modal.classList.remove('hidden');
 
   // Initial greeting message
-  const greeting = `Hello! 👋 I'm your AI learning guide for ${subject}. I can see you're a ${currentLearningStyle} learner. How can I help you master ${subject} today? Would you like:\n\n1. Study tips for your learning style\n2. Concept explanations\n3. Practice strategies\n4. Video recommendations`;
+  const greeting = `Hello! 👋 I'm your AI learning guide for ${subject}. I can see you're a ${currentLearningStyle} learner. How can I help you master ${subject} today? Would you like:\n\n1. Study tips tailored to your learning style\n2. Practice questions\n3. A quick overview of key concepts\n4. A step-by-step plan to improve?`;
 
   addMessage(greeting, 'ai');
 }
