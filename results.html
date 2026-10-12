@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Result | LearnigGuide</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background: linear-gradient(180deg, #eef4ff, #f8f9ff);
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+      }
+      .result-shell {
+        max-width: 760px;
+        margin: 60px auto;
+        background: white;
+        border-radius: 24px;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+        padding: 40px 28px;
+        text-align: center;
+      }
+      .badge {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: #e0ebff;
+        color: #1d4ed8;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+      .description {
+        font-size: 1.08rem;
+        line-height: 1.8;
+        max-width: 620px;
+        margin: 18px auto 0;
+        color: #334155;
+      }
+      .btn-row {
+        margin-top: 28px;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .button {
+        display: inline-block;
+        border: none;
+        border-radius: 12px;
+        padding: 14px 24px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .button.primary {
+        background: linear-gradient(135deg, #2563eb, #1e40af);
+        color: white;
+      }
+      .button.secondary {
+        background: #eef2ff;
+        color: #1e3a8a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result-shell">
+      <p class="eyebrow">Your Learning Style</p>
+      <div class="badge" id="learningStyleBadge">Loading...</div>
+      <h1 id="title">Your learning style is being identified...</h1>
+      <p class="description" id="description">Please wait while we prepare your study recommendations.</p>
+
+      <div class="btn-row">
+        <a class="button primary" href="subjects.html">Explore Subjects</a>
+        <a class="button secondary" href="assessment.html">Retake Assessment</a>
+      </div>
+    </div>
+
+    <script>
+      const styleDescriptions = {
+        visual: {
+          title: 'Visual Learner',
+          description: 'You learn best by seeing information clearly. Diagrams, color-coded notes, mind maps, and visual examples help you understand and remember concepts more effectively.'
+        },
+        auditory: {
+          title: 'Auditory Learner',
+          description: 'You learn best by listening and discussing. Lectures, verbal explanations, podcasts, and guided conversations are powerful ways for you to process new ideas.'
+        },
+        kinesthetic: {
+          title: 'Kinesthetic Learner',
+          description: 'You learn best through doing. Hands-on practice, experiments, role-play, and real-life applications make learning more natural and effective for you.'
+        }
+      };
+
+      const style = localStorage.getItem('learningStyle') || 'visual';
+      const data = styleDescriptions[style];
+
+      document.getElementById('learningStyleBadge').textContent = data.title;
+      document.getElementById('title').textContent = 'You are a ' + data.title + '!';
+      document.getElementById('description').textContent = data.description;
+    </script>
+  </body>
+</html>

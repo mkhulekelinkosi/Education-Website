@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subjects | LearnigGuide</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background: #f5f7ff;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+      }
+      .subjects-page {
+        max-width: 1080px;
+        margin: 60px auto;
+        padding: 20px;
+      }
+      .subjects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+        margin-top: 30px;
+      }
+      .subject-card {
+        background: white;
+        border-radius: 18px;
+        padding: 28px 20px;
+        box-shadow: 0 8px 18px rgba(30, 41, 59, 0.08);
+        text-align: center;
+      }
+      .subject-icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+      }
+      .button {
+        display: inline-block;
+        border: none;
+        border-radius: 12px;
+        padding: 12px 20px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .button.primary {
+        background: linear-gradient(135deg, #2563eb, #1e40af);
+        color: white;
+      }
+      .button.secondary {
+        background: #eef2ff;
+        color: #1e3a8a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="subjects-page">
+      <div class="section-heading" style="text-align: center; margin-bottom: 20px;">
+        <p class="eyebrow">Choose your subject</p>
+        <h1>What would you like to learn next?</h1>
+      </div>
+
+      <div class="subjects-grid">
+        <article class="subject-card">
+          <div class="subject-icon">🔢</div>
+          <h3>Mathematics</h3>
+          <p>Algebra, equations, geometry, and practice problems.</p>
+          <button class="button primary" data-subject="Mathematics">Learn Math</button>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-icon">⚗️</div>
+          <h3>Physical Sciences</h3>
+          <p>Motion, energy, chemistry, and scientific reasoning.</p>
+          <button class="button primary" data-subject="Physical Sciences">Learn Sciences</button>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-icon">📚</div>
+          <h3>English</h3>
+          <p>Grammar, writing, reading, and communication skills.</p>
+          <button class="button primary" data-subject="English">Learn English</button>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <a class="button secondary" href="results.html">Back to Result</a>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll('[data-subject]').forEach((button) => {
+        button.addEventListener('click', () => {
+          localStorage.setItem('selectedSubject', button.dataset.subject);
+          window.location.href = 'tutor.html';
+        });
+      });
+    </script>
+  </body>
+</html>

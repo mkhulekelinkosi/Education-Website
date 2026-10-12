@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment | LearnigGuide</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background: #f5f7ff;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+      }
+      .page-shell {
+        max-width: 900px;
+        margin: 60px auto;
+        background: #fff;
+        padding: 32px;
+        border-radius: 22px;
+        box-shadow: 0 10px 30px rgba(23, 37, 84, 0.08);
+      }
+      .page-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .quiz-question {
+        background: #f7f9ff;
+        border: 1px solid #dfe7ff;
+        border-radius: 16px;
+        padding: 22px 20px;
+        margin-bottom: 22px;
+      }
+      .question-text {
+        display: block;
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .options {
+        display: grid;
+        gap: 12px;
+      }
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #fff;
+        border: 1px solid #dfe7ff;
+        border-radius: 12px;
+        padding: 10px 12px;
+      }
+      .option input {
+        width: 18px;
+        height: 18px;
+      }
+      .btn-row {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .button {
+        display: inline-block;
+        border: none;
+        border-radius: 12px;
+        padding: 14px 28px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .button.primary {
+        background: linear-gradient(135deg, #2563eb, #1e40af);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="page-header">
+        <p class="eyebrow">Learning Style Assessment</p>
+        <h1>Find your learning style</h1>
+        <p>Answer the 5 questions below to understand how you learn best.</p>
+      </div>
+
+      <form id="learningQuiz">
+        <div class="quiz-question">
+          <label class="question-text">1. When learning something new, I prefer to:</label>
+          <div class="options">
+            <label class="option"><input type="radio" name="q1" value="visual" /> <span>See diagrams, charts, or videos</span></label>
+            <label class="option"><input type="radio" name="q1" value="auditory" /> <span>Listen to explanations or discussions</span></label>
+            <label class="option"><input type="radio" name="q1" value="kinesthetic" /> <span>Do hands-on activities or write/practice it myself</span></label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <label class="question-text">2. I remember information best when I:</label>
+          <div class="options">
+            <label class="option"><input type="radio" name="q2" value="visual" /> <span>Visualize it or write notes</span></label>
+            <label class="option"><input type="radio" name="q2" value="auditory" /> <span>Hear it spoken aloud</span></label>
+            <label class="option"><input type="radio" name="q2" value="kinesthetic" /> <span>Practice or move while learning</span></label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <label class="question-text">3. In class, I pay most attention to:</label>
+          <div class="options">
+            <label class="option"><input type="radio" name="q3" value="visual" /> <span>Slides, diagrams, and examples on the board</span></label>
+            <label class="option"><input type="radio" name="q3" value="auditory" /> <span>What the teacher says and discussion</span></label>
+            <label class="option"><input type="radio" name="q3" value="kinesthetic" /> <span>Experiments, activities, and practice tasks</span></label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <label class="question-text">4. When solving a problem, I:</label>
+          <div class="options">
+            <label class="option"><input type="radio" name="q4" value="visual" /> <span>Draw it out or picture it in my head</span></label>
+            <label class="option"><input type="radio" name="q4" value="auditory" /> <span>Talk it through step by step</span></label>
+            <label class="option"><input type="radio" name="q4" value="kinesthetic" /> <span>Try a practical approach or use examples</span></label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <label class="question-text">5. I enjoy studying when:</label>
+          <div class="options">
+            <label class="option"><input type="radio" name="q5" value="visual" /> <span>Using color-coded notes and mind maps</span></label>
+            <label class="option"><input type="radio" name="q5" value="auditory" /> <span>Listening to explanations, podcasts, or group talks</span></label>
+            <label class="option"><input type="radio" name="q5" value="kinesthetic" /> <span>Using activities, projects, or problem-solving practice</span></label>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button type="submit" class="button primary">See My Results</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const quizForm = document.getElementById('learningQuiz');
+
+      quizForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const answers = { visual: 0, auditory: 0, kinesthetic: 0 };
+
+        for (let i = 1; i <= 5; i++) {
+          const selected = document.querySelector(`input[name="q${i}"]:checked`);
+          if (selected) {
+            answers[selected.value] += 1;
+          }
+        }
+
+        const dominantStyle = Object.keys(answers).sort((a, b) => answers[b] - answers[a])[0];
+        localStorage.setItem('learningStyle', dominantStyle);
+        window.location.href = 'results.html';
+      });
+    </script>
+  </body>
+</html>

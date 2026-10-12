@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Tutor | LearnigGuide</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background: linear-gradient(180deg, #eef4ff, #f8f9ff);
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+      }
+      .tutor-shell {
+        max-width: 980px;
+        margin: 32px auto;
+        background: white;
+        border-radius: 24px;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+        padding: 24px;
+      }
+      .tutor-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+      }
+      .pill {
+        display: inline-block;
+        background: #dbeafe;
+        color: #1d4ed8;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+      .tip-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin-bottom: 22px;
+      }
+      .tip-box {
+        background: #f8faff;
+        border: 1px solid #dfe7ff;
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .chat-box {
+        background: #f8faff;
+        border: 1px solid #dfe7ff;
+        border-radius: 16px;
+        min-height: 260px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 16px;
+        max-height: 420px;
+        overflow-y: auto;
+      }
+      .msg {
+        max-width: 75%;
+        padding: 10px 14px;
+        border-radius: 14px;
+        line-height: 1.5;
+      }
+      .msg.user {
+        background: #2563eb;
+        color: white;
+        align-self: flex-end;
+      }
+      .msg.ai {
+        background: white;
+        border: 1px solid #dfe7ff;
+        align-self: flex-start;
+      }
+      .chat-controls {
+        display: flex;
+        gap: 12px;
+      }
+      .chat-controls input {
+        flex: 1;
+        border: 1px solid #dfe7ff;
+        border-radius: 12px;
+        padding: 12px 14px;
+      }
+      .button {
+        border: none;
+        border-radius: 12px;
+        padding: 12px 18px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .button.primary {
+        background: linear-gradient(135deg, #2563eb, #1e40af);
+        color: white;
+      }
+      .button.secondary {
+        background: #eef2ff;
+        color: #1e3a8a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tutor-shell">
+      <div class="tutor-top">
+        <div>
+          <p class="eyebrow">AI Learning Tutor</p>
+          <h1 id="subjectTitle">Subject</h1>
+        </div>
+        <div class="pill" id="learningStylePill">Learning style</div>
+      </div>
+
+      <div class="tip-grid" id="tipGrid"></div>
+
+      <div class="chat-box" id="chatBox">
+        <div class="msg ai">Hi! I’m your AI tutor for <strong id="subjectName">this subject</strong>. Ask me anything about your lesson, study plan, or practice questions.</div>
+      </div>
+
+      <div class="chat-controls">
+        <input id="chatInput" type="text" placeholder="Ask for help, explanations, or practice ideas..." />
+        <button class="button primary" id="sendBtn">Send</button>
+      </div>
+
+      <div style="margin-top: 18px;">
+        <a href="subjects.html" class="button secondary">Choose another subject</a>
+      </div>
+    </div>
+
+    <script>
+      const subject = localStorage.getItem('selectedSubject') || 'Mathematics';
+      const style = localStorage.getItem('learningStyle') || 'visual';
+
+      const subjectTitle = document.getElementById('subjectTitle');
+      const learningStylePill = document.getElementById('learningStylePill');
+      const subjectName = document.getElementById('subjectName');
+      const chatBox = document.getElementById('chatBox');
+      const chatInput = document.getElementById('chatInput');
+      const sendBtn = document.getElementById('sendBtn');
+
+      subjectTitle.textContent = subject;
+      learningStylePill.textContent = style + ' learner';
+      subjectName.textContent = subject;
+
+      const tipsBySubject = {
+        Mathematics: [
+          'Start with one concept at a time.',
+          'Use worked examples before trying difficult questions.',
+          'Practice short daily drills for formulas and procedures.'
+        ],
+        'Physical Sciences': [
+          'Focus on the idea behind the formula.',
+          'Connect theory to real-life examples and experiments.',
+          'Revise definitions and diagrams often.'
+        ],
+        English: [
+          'Break long passages into smaller ideas.',
+          'Practice grammar rules in short daily revision blocks.',
+          'Write and rewrite your own sentences to improve confidence.'
+        ]
+      };
+
+      const tipGrid = document.getElementById('tipGrid');
+      tipsBySubject[subject].forEach((tip) => {
+        const box = document.createElement('div');
+        box.className = 'tip-box';
+        box.innerHTML = `<strong>Study tip</strong><p>${tip}</p>`;
+        tipGrid.appendChild(box);
+      });
+
+      const responseLibrary = {
+        Mathematics: {
+          visual: 'Try drawing the problem, labeling each step, and using a colour-coded method to stay organised.',
+          auditory: 'Explain the steps out loud and listen to your own reasoning before solving the next question.',
+          kinesthetic: 'Use physical objects, counters, or real-life examples to model the problem before doing it on paper.'
+        },
+        'Physical Sciences': {
+          visual: 'Use diagrams and labelled visuals to connect theory, formulas, and experiments.',
+          auditory: 'Read the concept out loud and explain the relationship between variables in simple words.',
+          kinesthetic: 'Try mini experiments or practical examples to connect the concept to everyday life.'
+        },
+        English: {
+          visual: 'Use highlight colours for grammar patterns, key ideas, and structure in texts.',
+          auditory: 'Read sentences aloud and listen for tone, rhythm, and clarity in your writing.',
+          kinesthetic: 'Write short responses, revise them, and physically rewrite sentences to improve structure.'
+        }
+      };
+
+      function buildReply(input) {
+        const lower = input.toLowerCase();
+        const baseText = responseLibrary[subject]?.[style] || responseLibrary.Mathematics.visual;
+
+        if (lower.includes('practice') || lower.includes('question') || lower.includes('exercise')) {
+          return `A good practice step for ${subject} is to try 3 short questions, then review mistakes and repeat the method. ${baseText}`;
+        }
+
+        if (lower.includes('explain') || lower.includes('help')) {
+          return `Here is a simple way to approach ${subject}: first identify the key idea, then apply the method step by step, and finally check your answer. ${baseText}`;
+        }
+
+        if (lower.includes('study') || lower.includes('plan')) {
+          return `For a ${style} learner in ${subject}, try a 20-minute focused session: warm up with a concept, solve 2 examples, then review mistakes. ${baseText}`;
+        }
+
+        return `That's a good question. For a ${style} learner in ${subject}, the best method is to focus on clear examples and repeated practice. ${baseText}`;
+      }
+
+      function addMessage(text, sender) {
+        const msg = document.createElement('div');
+        msg.className = `msg ${sender}`;
+        msg.innerHTML = text;
+        chatBox.appendChild(msg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+
+      function sendMessage() {
+        const value = chatInput.value.trim();
+        if (!value) return;
+
+        addMessage(value, 'user');
+        chatInput.value = '';
+
+        setTimeout(() => {
+          addMessage(buildReply(value), 'ai');
+        }, 500);
+      }
+
+      sendBtn.addEventListener('click', sendMessage);
+      chatInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') sendMessage();
+      });
+    </script>
+  </body>
+</html>

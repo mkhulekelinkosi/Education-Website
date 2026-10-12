@@ -16,15 +16,18 @@
     />
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSS6NQXY2F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <style>
+      .home-cta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
 
-      gtag('config', 'G-GSS6NQXY2F');
-    </script>
+      .home-cta a {
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -52,18 +55,18 @@
             <p class="eyebrow">Master Your Learning Style</p>
             <h1>Let's get to know your strengths.</h1>
             <p class="lead">
-              LearnigGuide helps you understand your unique learning style, then provides personalized video guides and practice questions for Mathematics, Physical Sciences, and English.
+              LearnigGuide helps you understand your unique learning style, then provides personalized study strategies for Mathematics, Physical Sciences, and English.
             </p>
 
-            <div class="cta-row">
-              <a class="button primary" href="#quiz">Start Assessment</a>
+            <div class="home-cta">
+              <a class="button primary" href="assessment.html">Take Assessment</a>
               <a class="button secondary" href="#about">Learn More</a>
             </div>
 
             <ul class="trust-list" aria-label="Key benefits">
               <li>Personalized learning paths</li>
-              <li>Expert video guides</li>
-              <li>Practice questions</li>
+              <li>Expert guidance</li>
+              <li>Practice and confidence building</li>
             </ul>
           </div>
 
@@ -88,135 +91,20 @@
             <article class="feature-card">
               <div class="icon">🎯</div>
               <h3>Personalized Assessment</h3>
-              <p>Take a quick quiz to identify your learning style: Visual, Auditory, or Kinesthetic.</p>
+              <p>Take a short quiz to identify your learning style: Visual, Auditory, or Kinesthetic.</p>
             </article>
 
             <article class="feature-card">
-              <div class="icon">📹</div>
-              <h3>Expert Video Guides</h3>
-              <p>Watch curated videos tailored to your learning style for each subject.</p>
+              <div class="icon">📘</div>
+              <h3>Tailored Guidance</h3>
+              <p>Get recommendations for subjects and study methods that match how you learn best.</p>
             </article>
 
             <article class="feature-card">
-              <div class="icon">✏️</div>
-              <h3>Practice Questions</h3>
-              <p>Test your knowledge with subject-specific practice questions designed for your level.</p>
+              <div class="icon">🤖</div>
+              <h3>AI Tutor Support</h3>
+              <p>Continue your learning journey with an assistant that adapts to your chosen subject.</p>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="quiz" class="section alt-bg">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Learning Style Assessment</p>
-            <h2>Find Your Learning Style</h2>
-            <p class="intro-text">Answer 5 quick questions to discover how you learn best.</p>
-          </div>
-
-          <div class="quiz-container">
-            <form id="learningQuiz" class="quiz-form">
-              <div class="quiz-question">
-                <label class="question-text">1. When learning something new, I prefer to:</label>
-                <div class="options">
-                  <label class="option">
-                    <input type="radio" name="q1" value="visual" />
-                    <span>See diagrams, charts, or videos</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q1" value="auditory" />
-                    <span>Listen to lectures or discussions</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q1" value="kinesthetic" />
-                    <span>Do hands-on activities or experiments</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="quiz-question">
-                <label class="question-text">2. I remember information best when I:</label>
-                <div class="options">
-                  <label class="option">
-                    <input type="radio" name="q2" value="visual" />
-                    <span>Write it down or visualize it</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q2" value="auditory" />
-                    <span>Say it out loud or hear it repeated</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q2" value="kinesthetic" />
-                    <span>Practice it or move around</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="quiz-question">
-                <label class="question-text">3. In class, I pay most attention to:</label>
-                <div class="options">
-                  <label class="option">
-                    <input type="radio" name="q3" value="visual" />
-                    <span>The teacher's presentation slides</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q3" value="auditory" />
-                    <span>What the teacher says</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q3" value="kinesthetic" />
-                    <span>Lab work or interactive activities</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="quiz-question">
-                <label class="question-text">4. When solving a problem, I:</label>
-                <div class="options">
-                  <label class="option">
-                    <input type="radio" name="q4" value="visual" />
-                    <span>Draw it out or use a mental picture</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q4" value="auditory" />
-                    <span>Talk through it step by step</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q4" value="kinesthetic" />
-                    <span>Try different approaches physically</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="quiz-question">
-                <label class="question-text">5. I enjoy studying when:</label>
-                <div class="options">
-                  <label class="option">
-                    <input type="radio" name="q5" value="visual" />
-                    <span>Using colorful notes or mind maps</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q5" value="auditory" />
-                    <span>Studying with a group or using videos</span>
-                  </label>
-                  <label class="option">
-                    <input type="radio" name="q5" value="kinesthetic" />
-                    <span>Working on real problems or projects</span>
-                  </label>
-                </div>
-              </div>
-
-              <button type="submit" class="button primary quiz-submit">Get My Results</button>
-            </form>
-
-            <div id="quizResult" class="quiz-result hidden">
-              <div class="result-box">
-                <p class="result-label">Your Learning Style:</p>
-                <h3 id="resultStyle" class="result-style"></h3>
-                <p id="resultDescription" class="result-description"></p>
-                <a href="#subjects" class="button primary">Explore Your Path</a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -225,77 +113,30 @@
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Core Subjects</p>
-            <h2>Master These Subjects with Personalized Guidance</h2>
+            <h2>Choose a subject path</h2>
           </div>
 
           <div class="subjects-grid">
             <article class="subject-card">
               <div class="subject-icon">🔢</div>
               <h3>Mathematics</h3>
-              <p>From algebra to calculus, master mathematical concepts with your learning style.</p>
-              <ul class="topics-list">
-                <li>Algebra & Equations</li>
-                <li>Geometry & Proofs</li>
-                <li>Calculus Basics</li>
-              </ul>
-              <button class="button secondary small" data-subject="Mathematics">Learn Math</button>
+              <p>Build confident understanding from simple concepts to complex problems.</p>
+              <button class="button secondary small" onclick="window.location.href='subjects.html'">Learn More</button>
             </article>
 
             <article class="subject-card">
               <div class="subject-icon">⚗️</div>
               <h3>Physical Sciences</h3>
-              <p>Understand physics and chemistry through your preferred learning method.</p>
-              <ul class="topics-list">
-                <li>Forces & Motion</li>
-                <li>Energy & Thermodynamics</li>
-                <li>Chemical Reactions</li>
-              </ul>
-              <button class="button secondary small" data-subject="Physical Sciences">Learn Sciences</button>
+              <p>Explore forces, energy, matter, and real-world scientific thinking.</p>
+              <button class="button secondary small" onclick="window.location.href='subjects.html'">Learn More</button>
             </article>
 
             <article class="subject-card">
               <div class="subject-icon">📚</div>
               <h3>English</h3>
-              <p>Improve writing, reading, and communication skills with tailored strategies.</p>
-              <ul class="topics-list">
-                <li>Grammar & Writing</li>
-                <li>Literature Analysis</li>
-                <li>Communication Skills</li>
-              </ul>
-              <button class="button secondary small" data-subject="English">Learn English</button>
+              <p>Improve writing, reading comprehension, and communication skills.</p>
+              <button class="button secondary small" onclick="window.location.href='subjects.html'">Learn More</button>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt-bg">
-        <div class="container split">
-          <div>
-            <p class="eyebrow">How It Works</p>
-            <h2>Your Learning Journey</h2>
-          </div>
-
-          <div class="steps-vertical">
-            <div class="step-vertical">
-              <span class="step-num">1</span>
-              <h4>Take Assessment</h4>
-              <p>Complete our learning style quiz in 2 minutes.</p>
-            </div>
-            <div class="step-vertical">
-              <span class="step-num">2</span>
-              <h4>Get Recommendations</h4>
-              <p>Receive personalized video guides for your style.</p>
-            </div>
-            <div class="step-vertical">
-              <span class="step-num">3</span>
-              <h4>Practice & Master</h4>
-              <p>Answer practice questions and track your progress.</p>
-            </div>
-            <div class="step-vertical">
-              <span class="step-num">4</span>
-              <h4>Achieve Success</h4>
-              <p>Apply your knowledge and excel in your studies.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -303,46 +144,13 @@
       <section id="cta" class="section cta-section">
         <div class="container cta-box">
           <div>
-            <p class="eyebrow">Ready to transform your learning?</p>
-            <h2>Start Your Personalized Learning Journey Today</h2>
+            <p class="eyebrow">Ready to start?</p>
+            <h2>Find your learning style and begin your journey today.</h2>
           </div>
-          <a href="#quiz" class="button primary">Take Assessment Now</a>
+          <a href="assessment.html" class="button primary">Take Assessment Now</a>
         </div>
       </section>
     </main>
-
-    <!-- AI Chatbot Modal -->
-    <div id="aiModal" class="modal hidden">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <div class="modal-header">
-          <h2 id="modalTitle">Learn Mathematics</h2>
-          <p>AI-Powered Personalized Recommendations</p>
-        </div>
-
-        <div class="modal-body">
-          <!-- Chat Section -->
-          <div class="chat-section">
-            <div id="chatBox" class="chat-box"></div>
-            <div class="chat-input-wrapper">
-              <input
-                type="text"
-                id="chatInput"
-                class="chat-input"
-                placeholder="Ask me anything about your learning..."
-              />
-              <button id="chatSend" class="button primary small">Send</button>
-            </div>
-          </div>
-
-          <!-- Recommendations Section -->
-          <div class="recommendations-section hidden" id="recommendationsSection">
-            <h3>📌 Your Personalized Recommendations</h3>
-            <div id="recommendationsBox" class="recommendations-box"></div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <footer class="site-footer">
       <div class="container footer-row">
@@ -351,6 +159,17 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const toggleButton = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (toggleButton && navLinks) {
+        toggleButton.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => navLinks.classList.remove('is-open'));
+        });
+      }
+    </script>
   </body>
 </html>
