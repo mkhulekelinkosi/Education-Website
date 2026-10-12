@@ -3,235 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Tutor | LearnigGuide</title>
+    <meta
+      name="description"
+      content="LearnigGuide: Discover your learning style and master Mathematics, Physical Sciences, and English with personalized study strategies."
+    />
+    <title>LearnigGuide - Your Personalized Learning Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
+
     <style>
-      body {
-        background: linear-gradient(180deg, #eef4ff, #f8f9ff);
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-      }
-      .tutor-shell {
-        max-width: 980px;
-        margin: 32px auto;
-        background: white;
-        border-radius: 24px;
-        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-        padding: 24px;
-      }
-      .tutor-top {
+      .home-cta {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-bottom: 18px;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
       }
-      .pill {
-        display: inline-block;
-        background: #dbeafe;
-        color: #1d4ed8;
-        padding: 8px 14px;
-        border-radius: 999px;
-        font-weight: 700;
-        text-transform: capitalize;
-      }
-      .tip-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 14px;
-        margin-bottom: 22px;
-      }
-      .tip-box {
-        background: #f8faff;
-        border: 1px solid #dfe7ff;
-        border-radius: 14px;
-        padding: 16px;
-      }
-      .chat-box {
-        background: #f8faff;
-        border: 1px solid #dfe7ff;
-        border-radius: 16px;
-        min-height: 260px;
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 16px;
-        max-height: 420px;
-        overflow-y: auto;
-      }
-      .msg {
-        max-width: 75%;
-        padding: 10px 14px;
-        border-radius: 14px;
-        line-height: 1.5;
-      }
-      .msg.user {
-        background: #2563eb;
-        color: white;
-        align-self: flex-end;
-      }
-      .msg.ai {
-        background: white;
-        border: 1px solid #dfe7ff;
-        align-self: flex-start;
-      }
-      .chat-controls {
-        display: flex;
-        gap: 12px;
-      }
-      .chat-controls input {
-        flex: 1;
-        border: 1px solid #dfe7ff;
-        border-radius: 12px;
-        padding: 12px 14px;
-      }
-      .button {
-        border: none;
-        border-radius: 12px;
-        padding: 12px 18px;
-        font-weight: 700;
-        cursor: pointer;
-      }
-      .button.primary {
-        background: linear-gradient(135deg, #2563eb, #1e40af);
-        color: white;
-      }
-      .button.secondary {
-        background: #eef2ff;
-        color: #1e3a8a;
+
+      .home-cta a {
+        text-decoration: none;
       }
     </style>
   </head>
   <body>
-    <div class="tutor-shell">
-      <div class="tutor-top">
-        <div>
-          <p class="eyebrow">AI Learning Tutor</p>
-          <h1 id="subjectTitle">Subject</h1>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="LearnigGuide Home">
+          <span class="brand-mark">LG</span>
+          <span>LearnigGuide</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#quiz">Assessment</a>
+          <a href="#subjects">Subjects</a>
+          <a href="#cta">Get Started</a>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Master Your Learning Style</p>
+            <h1>Let's get to know your strengths.</h1>
+            <p class="lead">
+              LearnigGuide helps you understand your unique learning style, then provides personalized study strategies for Mathematics, Physical Sciences, and English.
+            </p>
+
+            <div class="home-cta">
+              <a class="button primary" href="assessment.html">Take Assessment</a>
+              <a class="button secondary" href="#about">Learn More</a>
+            </div>
+
+            <ul class="trust-list" aria-label="Key benefits">
+              <li>Personalized learning paths</li>
+              <li>Expert guidance</li>
+              <li>Practice and confidence building</li>
+            </ul>
+          </div>
+
+          <div class="hero-card">
+            <div class="learning-visual">
+              <div class="learning-circle visual-1">Visual</div>
+              <div class="learning-circle visual-2">Auditory</div>
+              <div class="learning-circle visual-3">Kinesthetic</div>
+            </div>
+          </div>
         </div>
-        <div class="pill" id="learningStylePill">Learning style</div>
-      </div>
+      </section>
 
-      <div class="tip-grid" id="tipGrid"></div>
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Why LearnigGuide</p>
+            <h2>Everyone learns differently. We help you find your way.</h2>
+          </div>
 
-      <div class="chat-box" id="chatBox">
-        <div class="msg ai">Hi! I’m your AI tutor for <strong id="subjectName">this subject</strong>. Ask me anything about your lesson, study plan, or practice questions.</div>
-      </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="icon">🎯</div>
+              <h3>Personalized Assessment</h3>
+              <p>Take a short quiz to identify your learning style: Visual, Auditory, or Kinesthetic.</p>
+            </article>
 
-      <div class="chat-controls">
-        <input id="chatInput" type="text" placeholder="Ask for help, explanations, or practice ideas..." />
-        <button class="button primary" id="sendBtn">Send</button>
-      </div>
+            <article class="feature-card">
+              <div class="icon">📘</div>
+              <h3>Tailored Guidance</h3>
+              <p>Get recommendations for subjects and study methods that match how you learn best.</p>
+            </article>
 
-      <div style="margin-top: 18px;">
-        <a href="subjects.html" class="button secondary">Choose another subject</a>
+            <article class="feature-card">
+              <div class="icon">🤖</div>
+              <h3>AI Tutor Support</h3>
+              <p>Continue your learning journey with an assistant that adapts to your chosen subject.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="subjects" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Core Subjects</p>
+            <h2>Choose a subject path</h2>
+          </div>
+
+          <div class="subjects-grid">
+            <article class="subject-card">
+              <div class="subject-icon">🔢</div>
+              <h3>Mathematics</h3>
+              <p>Build confident understanding from simple concepts to complex problems.</p>
+              <button class="button secondary small" onclick="window.location.href='subjects.html'">Learn More</button>
+            </article>
+
+            <article class="subject-card">
+              <div class="subject-icon">⚗️</div>
+              <h3>Physical Sciences</h3>
+              <p>Explore forces, energy, matter, and real-world scientific thinking.</p>
+              <button class="button secondary small" onclick="window.location.href='subjects.html'">Learn More</button>
+            </article>
+
+            <article class="subject-card">
+              <div class="subject-icon">📚</div>
+              <h3>English</h3>
+              <p>Improve writing, reading comprehension, and communication skills.</p>
+              <button class="button secondary small" onclick="window.location.href='subjects.html'">Learn More</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="section cta-section">
+        <div class="container cta-box">
+          <div>
+            <p class="eyebrow">Ready to start?</p>
+            <h2>Find your learning style and begin your journey today.</h2>
+          </div>
+          <a href="assessment.html" class="button primary">Take Assessment Now</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>© <span id="year"></span> LearnigGuide</p>
+        <p>Personalized learning for every student.</p>
       </div>
-    </div>
+    </footer>
 
     <script>
-      const subject = localStorage.getItem('selectedSubject') || 'Mathematics';
-      const style = localStorage.getItem('learningStyle') || 'visual';
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const toggleButton = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
 
-      const subjectTitle = document.getElementById('subjectTitle');
-      const learningStylePill = document.getElementById('learningStylePill');
-      const subjectName = document.getElementById('subjectName');
-      const chatBox = document.getElementById('chatBox');
-      const chatInput = document.getElementById('chatInput');
-      const sendBtn = document.getElementById('sendBtn');
-
-      subjectTitle.textContent = subject;
-      learningStylePill.textContent = style + ' learner';
-      subjectName.textContent = subject;
-
-      const tipsBySubject = {
-        Mathematics: [
-          'Start with one concept at a time.',
-          'Use worked examples before trying difficult questions.',
-          'Practice short daily drills for formulas and procedures.'
-        ],
-        'Physical Sciences': [
-          'Focus on the idea behind the formula.',
-          'Connect theory to real-life examples and experiments.',
-          'Revise definitions and diagrams often.'
-        ],
-        English: [
-          'Break long passages into smaller ideas.',
-          'Practice grammar rules in short daily revision blocks.',
-          'Write and rewrite your own sentences to improve confidence.'
-        ]
-      };
-
-      const tipGrid = document.getElementById('tipGrid');
-      tipsBySubject[subject].forEach((tip) => {
-        const box = document.createElement('div');
-        box.className = 'tip-box';
-        box.innerHTML = `<strong>Study tip</strong><p>${tip}</p>`;
-        tipGrid.appendChild(box);
-      });
-
-      const responseLibrary = {
-        Mathematics: {
-          visual: 'Try drawing the problem, labeling each step, and using a colour-coded method to stay organised.',
-          auditory: 'Explain the steps out loud and listen to your own reasoning before solving the next question.',
-          kinesthetic: 'Use physical objects, counters, or real-life examples to model the problem before doing it on paper.'
-        },
-        'Physical Sciences': {
-          visual: 'Use diagrams and labelled visuals to connect theory, formulas, and experiments.',
-          auditory: 'Read the concept out loud and explain the relationship between variables in simple words.',
-          kinesthetic: 'Try mini experiments or practical examples to connect the concept to everyday life.'
-        },
-        English: {
-          visual: 'Use highlight colours for grammar patterns, key ideas, and structure in texts.',
-          auditory: 'Read sentences aloud and listen for tone, rhythm, and clarity in your writing.',
-          kinesthetic: 'Write short responses, revise them, and physically rewrite sentences to improve structure.'
-        }
-      };
-
-      function buildReply(input) {
-        const lower = input.toLowerCase();
-        const baseText = responseLibrary[subject]?.[style] || responseLibrary.Mathematics.visual;
-
-        if (lower.includes('practice') || lower.includes('question') || lower.includes('exercise')) {
-          return `A good practice step for ${subject} is to try 3 short questions, then review mistakes and repeat the method. ${baseText}`;
-        }
-
-        if (lower.includes('explain') || lower.includes('help')) {
-          return `Here is a simple way to approach ${subject}: first identify the key idea, then apply the method step by step, and finally check your answer. ${baseText}`;
-        }
-
-        if (lower.includes('study') || lower.includes('plan')) {
-          return `For a ${style} learner in ${subject}, try a 20-minute focused session: warm up with a concept, solve 2 examples, then review mistakes. ${baseText}`;
-        }
-
-        return `That's a good question. For a ${style} learner in ${subject}, the best method is to focus on clear examples and repeated practice. ${baseText}`;
+      if (toggleButton && navLinks) {
+        toggleButton.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => navLinks.classList.remove('is-open'));
+        });
       }
-
-      function addMessage(text, sender) {
-        const msg = document.createElement('div');
-        msg.className = `msg ${sender}`;
-        msg.innerHTML = text;
-        chatBox.appendChild(msg);
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
-
-      function sendMessage() {
-        const value = chatInput.value.trim();
-        if (!value) return;
-
-        addMessage(value, 'user');
-        chatInput.value = '';
-
-        setTimeout(() => {
-          addMessage(buildReply(value), 'ai');
-        }, 500);
-      }
-
-      sendBtn.addEventListener('click', sendMessage);
-      chatInput.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') sendMessage();
-      });
     </script>
   </body>
 </html>
